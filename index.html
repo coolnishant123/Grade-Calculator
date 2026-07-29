@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Grade Calculator</title>
+</head>
+<body>
+  <div class="box">
+<div class="left">
+<h1 id="result">Result</h1>
+<br><br><br><br>
+<h2 id="total">Total:</h2>
+<br>
+<h2 id="percentage">Percentage:</h2>
+<br>
+<h2 id="grade">Grade:</h2>
+<br>
+</div>
+
+<div class="right">
+<input type="number" id="maths" placeholder="Maths"  required>
+<input type="number" id="chemistry"  placeholder="Chemistry"  required>
+<input type="number" id="physics" placeholder="Physics"  required>
+<input type="number" id="computer" placeholder="computer Science"  required>
+<input type="number"  id="biology" placeholder="Biology"  required>
+<button onclick="
+let Maths = Number(document.querySelector(`#maths`).value);
+let Chemistry = Number(document.querySelector(`#chemistry`).value);
+let Physics = Number(document.querySelector(`#physics`).value);
+let ComputerScience = Number(document.querySelector(`#computer`).value);
+let Biology = Number(document.querySelector(`#biology`).value);
+
+let total = Maths + Chemistry + Physics + ComputerScience + Biology;
+let percentage = total/5;
+let grade = ``;
+
+if (percentage >=90) {
+  grade = `A++` ;
+}
+else if (percentage >=80){
+  grade = `A` ;
+}
+else if (percentage >= 70){
+  grade = `B`;
+}
+else if (percentage >=60){
+  grade = `C`;
+}
+else if (percentage >= 40){
+  grade = `D`;
+}
+else {
+  grade = `Fail`;
+}
+
+document.querySelector(`#total`).textContent = `Total: ${total}/500`;
+document.querySelector(`#percentage`).textContent = `Percentage: ${percentage}%`;
+document.querySelector(`#grade`).textContent = `Grade: ${grade}`;
+
+
+
+
+
+
+
+
+
+
+">Calculate Result</button>
+</div>
+
+
+  </div>
+
+
+<script src="grade.js"></script>
+</body>
+</html>
